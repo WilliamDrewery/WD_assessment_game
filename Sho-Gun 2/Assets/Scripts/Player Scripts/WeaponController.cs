@@ -12,7 +12,6 @@ public class WeaponController : MonoBehaviour
     public Transform Player;
     public GameObject PlayerGO;
     public Transform Bullet;
-    public GameObject Sparks;
     public Transform firepos;
     public Vector3 direction;
     private SpriteRenderer WeaponSR;
@@ -37,7 +36,7 @@ public class WeaponController : MonoBehaviour
             {
                 direction = (mouse - position).normalized;
                 Transform bulletTransform = Instantiate(Bullet, Player.position, Quaternion.identity);
-                Instantiate(Sparks, firepos.position, Quaternion.identity);
+                
                 bulletTransform.GetComponent<PlayerBulletController>().Direction(direction);
                 cooldown = 20f;
             }
